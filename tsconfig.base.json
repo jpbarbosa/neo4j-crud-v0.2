@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@neo4j-crud/graph": ["packages/graph/src/index.ts"],
+      "@neo4j-crud/shared": ["packages/shared/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
