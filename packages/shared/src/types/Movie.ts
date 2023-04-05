@@ -1,10 +1,10 @@
-export interface Movie {
+export type Movie = {
   id: number;
   title: string;
   released: number;
   tagline: string;
-}
+};
 
-export interface MoviesQueryResult {
+export type MoviesQueryResult = {
   movie: Movie;
-}
+};
