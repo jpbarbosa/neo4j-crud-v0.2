@@ -59,10 +59,16 @@ describe('graph.movies', () => {
   });
 
   it('should update movie tagline', async () => {
-    // TODO: implement
+    const [movie] = await graph.movies(session).getAll(sampleMovie.title);
+    movie.tagline += ' updated';
+    const updatedMovie = await graph.movies(session).update(movie.id, movie);
+    expectMoviesToBeEqual(updatedMovie, movie);
   });
 
   it('should delete the movie', async () => {
-    // TODO: implement
+    const [movie] = await graph.movies(session).getAll(sampleMovie.title);
+    const result = await graph.movies(session).remove(movie.id);
+    const movies = await graph.movies(session).getAll(sampleMovie.title);
+    expect(movies).toHaveLength(0);
   });
 });
