@@ -1,0 +1,22 @@
+.alert {
+  margin: 16px;
+  padding: 8px;
+  border: 2px solid white;
+  color: white;
+
+  &.info {
+    background: #666;
+  }
+
+  &.warn {
+    background: darkgoldenrod;
+  }
+
+  &.danger {
+    background: darkred;
+  }
+
+  &.success {
+    background: darkgreen;
+  }
+}

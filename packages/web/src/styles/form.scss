@@ -1,0 +1,50 @@
+@use './button';
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input[type='text'],
+input[type='submit'],
+select {
+  font-size: large;
+  border-radius: 8px;
+  border: 1px solid #fff;
+  margin: 0 8px 8px 0;
+}
+
+fieldset {
+  margin-bottom: 16px;
+  padding: 16px;
+
+  &.basic-info input[type='text'] {
+    width: 800px;
+  }
+}
+
+input[type='text'],
+select {
+  background: #000;
+  color: #eee;
+  padding: 8px;
+}
+
+input[type='submit'] {
+  @extend .button;
+  @extend .primary;
+}
+
+input[type='text'].number {
+  width: 200px !important;
+}
+
+select,
+fieldset.actors input[type='text'] {
+  width: 300px;
+}
+
+.form-field-error {
+  margin: 0 16px 16px 0;
+  color: red;
+}
