@@ -8,4 +8,6 @@ export default {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../coverage/packages/graph',
+  setupFilesAfterEnv: ['jest-extended/all'],
+  globalSetup: './jestGlobalSetup.ts',
 };
