@@ -1,22 +1,26 @@
 {
-  "name": "http",
+  "name": "api",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/http/src",
+  "sourceRoot": "packages/api/src",
   "projectType": "application",
   "targets": {
     "build": {
       "executor": "@nrwl/webpack:webpack",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "defaultConfiguration": "production",
       "options": {
         "target": "node",
         "compiler": "tsc",
-        "outputPath": "dist/packages/http",
-        "main": "packages/http/src/main.ts",
-        "tsConfig": "packages/http/tsconfig.app.json",
-        "assets": ["packages/http/src/assets"],
+        "outputPath": "dist/packages/api",
+        "main": "packages/api/src/main.ts",
+        "tsConfig": "packages/api/tsconfig.app.json",
+        "assets": [
+          "packages/api/src/assets"
+        ],
         "isolatedConfig": true,
-        "webpackConfig": "packages/http/webpack.config.js"
+        "webpackConfig": "packages/api/webpack.config.js"
       },
       "configurations": {
         "development": {},
@@ -27,29 +31,35 @@
       "executor": "@nrwl/js:node",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "http:build"
+        "buildTarget": "api:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "http:build:development"
+          "buildTarget": "api:build:development"
         },
         "production": {
-          "buildTarget": "http:build:production"
+          "buildTarget": "api:build:production"
         }
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["packages/http/**/*.ts"]
+        "lintFilePatterns": [
+          "packages/api/**/*.ts"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
-        "jestConfig": "packages/http/jest.config.ts",
+        "jestConfig": "packages/api/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
