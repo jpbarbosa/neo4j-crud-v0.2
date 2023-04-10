@@ -27,6 +27,7 @@ export const Header: React.FC = () => {
     { path: '/movies', label: 'Movies' },
     { path: '/people', label: 'People' },
     { path: '/visualization', label: 'Graph Visualization' },
+    { path: '/shortest-path', label: 'Shortest Path' },
   ];
 
   return (
