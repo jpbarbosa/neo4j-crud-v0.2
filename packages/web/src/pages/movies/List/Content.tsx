@@ -3,6 +3,7 @@ import { useQuery } from 'react-query';
 import { AxiosCustomError, Movie } from '@neo4j-crud/shared';
 import { useDebounce } from '../../../hooks/useDebounce';
 import { Item } from './Item';
+import { AlertCombo } from '../../../components';
 
 const url = `${import.meta.env.VITE_API_URI}/movies`;
 
@@ -18,16 +19,8 @@ export const Content: React.FC<ContentProps> = ({ search }) => {
     () => axios.get<Movie[]>(`${url}?search=${search}`).then((res) => res.data)
   );
 
-  if (error) {
-    return <div>{error.message}</div>;
-  }
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (!data) {
-    return <div>No data.</div>;
+  if (error || isLoading || !data) {
+    return <AlertCombo error={error} isLoading={isLoading} data={data} />;
   }
 
   return (
