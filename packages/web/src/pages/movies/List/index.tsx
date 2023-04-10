@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Content } from './Content';
 
 export const List = () => {
@@ -15,6 +16,11 @@ export const List = () => {
             placeholder="Search by movie title or person name..."
             onChange={(e) => setSearch(e.target.value)}
           />
+        </div>
+        <div>
+          <Link to="new" className="button primary">
+            Create Movie
+          </Link>
         </div>
       </div>
       <Content search={search} />
