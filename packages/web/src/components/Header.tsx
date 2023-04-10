@@ -26,6 +26,7 @@ export const Header: React.FC = () => {
   const navItems: NavItem[] = [
     { path: '/movies', label: 'Movies' },
     { path: '/people', label: 'People' },
+    { path: '/visualization', label: 'Graph Visualization' },
   ];
 
   return (

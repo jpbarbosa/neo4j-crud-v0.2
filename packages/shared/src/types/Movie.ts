@@ -17,6 +17,8 @@ export type Movie = {
   };
 };
 
+export type MovieNode = Node<Integer, Movie>;
+
 export type MoviesQueryResult = {
   movie: Movie;
 };

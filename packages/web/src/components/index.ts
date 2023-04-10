@@ -5,3 +5,4 @@ export * from './ErrorAlert';
 export * from './LoadingAlert';
 export * from './NavigationAlert';
 export * from './InputText';
+export * from './GraphVis';
