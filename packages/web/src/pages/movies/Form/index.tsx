@@ -1,9 +1,10 @@
 import { useEffect, useMemo } from 'react';
-import { Movie } from '@neo4j-crud/shared';
+import { Movie, relationships, stringToTitleCase } from '@neo4j-crud/shared';
 import { Controller, useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { useMovieMutation } from '../../../hooks/useMovieMutation';
-import { ErrorAlert } from '../../../components';
+import { ErrorAlert, InputText } from '../../../components';
+import { FormPeople } from './People';
 
 type FormProps = {
   movie?: Movie;
@@ -62,7 +63,7 @@ export const Form: React.FC<FormProps> = ({ movie }) => {
                 name="title"
                 control={control}
                 rules={{ required: true }}
-                render={(props) => <input type="text" {...props.field} />}
+                render={(props) => <InputText {...props} />}
               />
             </div>
             <div>
@@ -71,7 +72,7 @@ export const Form: React.FC<FormProps> = ({ movie }) => {
                 name="tagline"
                 control={control}
                 rules={{ required: true }}
-                render={(props) => <input type="text" {...props.field} />}
+                render={(props) => <InputText {...props} />}
               />
             </div>
             <div>
@@ -80,12 +81,20 @@ export const Form: React.FC<FormProps> = ({ movie }) => {
                 name="released"
                 control={control}
                 rules={{ required: true }}
-                render={(props) => (
-                  <input type="text" {...props.field} className="number" />
-                )}
+                render={(props) => <InputText {...props} className="number" />}
               />
             </div>
           </fieldset>
+          {relationships.map((relationship) => (
+            <fieldset key={relationship.key} className="actors">
+              <legend>{stringToTitleCase(relationship.key)}</legend>
+              <FormPeople
+                control={control}
+                register={register}
+                relationship={relationship}
+              />
+            </fieldset>
+          ))}
           <div className="bottom-actions-bar">
             <input type="submit" />
             {movie && (

@@ -1,7 +1,12 @@
-import { Movie } from '@neo4j-crud/shared';
+import {
+  Movie,
+  RelationshipCollection,
+  relationships,
+} from '@neo4j-crud/shared';
 import { Link } from 'react-router-dom';
 import { HighlightedText } from '../../../components';
 import { fileNameFromString } from '../../../utils/fileNameFromString';
+import { MoviePeople } from './MoviePeople';
 
 export type ItemProps = {
   movie: Movie;
@@ -28,6 +33,20 @@ export const Item: React.FC<ItemProps> = ({ movie, search }) => {
             </h3>
             <div className="released">Released: {movie.released}</div>
             <div className="tagline">{movie.tagline}</div>
+            <div className="relationships">
+              {relationships.map((relationship) => (
+                <MoviePeople
+                  key={relationship.key}
+                  relationship={relationship}
+                  people={
+                    movie.people[
+                      relationship.collection as RelationshipCollection
+                    ]
+                  }
+                  search={search}
+                />
+              ))}
+            </div>
           </div>
           <div className="action">
             <button className="ghost">Edit</button>
