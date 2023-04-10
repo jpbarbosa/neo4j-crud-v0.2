@@ -1,5 +1,5 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
-import { Movies } from '../pages';
+import { Movies, People } from '../pages';
 import { Header } from '../components';
 
 export function App() {
@@ -9,6 +9,7 @@ export function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/movies" />} />
         <Route path="/movies/*" element={<Movies />} />
+        <Route path="/people/*" element={<People />} />
       </Routes>
     </>
   );
