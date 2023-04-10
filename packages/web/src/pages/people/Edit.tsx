@@ -3,7 +3,7 @@ import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import { api } from '../../api';
 import { AlertCombo } from '../../components';
-import { Form } from './Form/Form';
+import { Form } from './Form';
 
 export const Edit = () => {
   const params = useParams();
