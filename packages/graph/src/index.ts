@@ -1,2 +1,2 @@
 export * from './movies';
-import * from './people';
+export * from './people';
