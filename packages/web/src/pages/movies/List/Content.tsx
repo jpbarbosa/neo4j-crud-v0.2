@@ -5,7 +5,7 @@ import { useDebounce } from '../../../hooks/useDebounce';
 import { Item } from './Item';
 import { AlertCombo } from '../../../components';
 
-const url = `${import.meta.env.VITE_API_URI}/movies`;
+const url = `${import.meta.env.VITE_API_URL}/movies`;
 
 type ContentProps = {
   search: string;

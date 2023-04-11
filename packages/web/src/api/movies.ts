@@ -1,7 +1,7 @@
 import { Movie } from '@neo4j-crud/shared';
 import axios from 'axios';
 
-const url = `${import.meta.env.VITE_API_URI}/movies`;
+const url = `${import.meta.env.VITE_API_URL}/movies`;
 
 export const movies = {
   getAll: (search: string) =>

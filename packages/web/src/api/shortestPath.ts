@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { GraphVisData } from 'react-graph-vis';
 
-const url = `${import.meta.env.VITE_API_URI}/shortest-path`;
+const url = `${import.meta.env.VITE_API_URL}/shortest-path`;
 
 export const shortestPath = {
   get: (person1: string, person2: string) =>

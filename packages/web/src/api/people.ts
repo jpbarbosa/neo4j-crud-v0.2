@@ -1,7 +1,7 @@
 import { Person } from '@neo4j-crud/shared';
 import axios from 'axios';
 
-const url = `${import.meta.env.VITE_API_URI}/people`;
+const url = `${import.meta.env.VITE_API_URL}/people`;
 
 export const people = {
   getAll: (search = '') =>
