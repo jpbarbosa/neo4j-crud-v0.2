@@ -2,6 +2,7 @@ import { Person, PersonMovie, relationships } from '@neo4j-crud/shared';
 import { HighlightedText } from '../../../components';
 import { Link } from 'react-router-dom';
 import { PersonMovies } from './PersonMovies';
+import { fileNameFromString } from '../../../utils/fileNameFromString';
 
 type ItemProps = {
   person: Person;
@@ -15,9 +16,9 @@ export const Item: React.FC<ItemProps> = ({ person, search }) => {
         <img
           src="/img/px.gif"
           style={{
-            backgroundImage: `url("/img/people/${person.name
-              .toLowerCase()
-              .replaceAll(' ', '_')}.jpg")`,
+            backgroundImage: `url("/img/people/${fileNameFromString(
+              person.name
+            )}.jpg")`,
           }}
           alt={person.name}
         />
