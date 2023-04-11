@@ -18,7 +18,10 @@ export const SelectPerson: React.FC<SelectPersonProps> = ({
   const [addNewPerson, setAddNewPerson] = useState(false);
 
   const { onChange, ...rest } = register(
-    `people.${relationship.collection}.${index}.name`
+    `people.${relationship.collection}.${index}.name`,
+    {
+      required: true,
+    }
   );
 
   const handleChange = (
