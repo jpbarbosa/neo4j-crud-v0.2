@@ -1,6 +1,6 @@
 import { Session } from 'neo4j-driver';
 import { PeopleQueryResult, Person } from '@neo4j-crud/shared';
-import { queries } from './queries';
+import * as queries from './queries';
 
 export const people = (session: Session) => ({
   getAll: async (search = '') => {

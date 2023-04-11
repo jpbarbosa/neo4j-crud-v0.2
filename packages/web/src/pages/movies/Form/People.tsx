@@ -10,7 +10,7 @@ import {
 } from 'react-hook-form';
 import { FormPeopleRoles } from './PeopleRoles';
 import { LoadingAlert } from '../../../components';
-import { api } from '../../../api';
+import * as api from '../../../api';
 
 type FormPeopleProps = {
   control: Control<Movie>;

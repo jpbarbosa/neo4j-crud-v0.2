@@ -1,7 +1,7 @@
 import { AxiosCustomError, Movie } from '@neo4j-crud/shared';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
-import { api } from '../../api';
+import * as api from '../../api';
 import { AlertCombo } from '../../components';
 import { Form } from './Form';
 

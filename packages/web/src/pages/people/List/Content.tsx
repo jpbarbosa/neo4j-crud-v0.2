@@ -1,6 +1,6 @@
 import { AxiosCustomError, Person } from '@neo4j-crud/shared';
 import { useQuery } from 'react-query';
-import { api } from '../../../api';
+import * as api from '../../../api';
 import { AlertCombo } from '../../../components';
 import { useDebounce } from '../../../hooks/useDebounce';
 import { Item } from './Item';

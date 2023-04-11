@@ -1,7 +1,7 @@
 import { Person } from '@neo4j-crud/shared';
 import { useState } from 'react';
 import { useQuery } from 'react-query';
-import { api } from '../../api';
+import * as api from '../../api';
 import { Content } from './Content';
 import { SelectPerson } from './SelectPerson';
 

@@ -1,6 +1,6 @@
 import { AxiosCustomError, Movie } from '@neo4j-crud/shared';
 import { MutationKey, useMutation } from 'react-query';
-import { api } from '../api';
+import * as api from '../api';
 
 export const useMovieMutation = (
   mutationKey: MutationKey,
