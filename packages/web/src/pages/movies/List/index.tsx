@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Content } from './Content';
+import { NavigationAlert } from '../../../components';
 
 export const List = () => {
   const [search, setSearch] = useState<string>('');
@@ -23,6 +24,7 @@ export const List = () => {
           </Link>
         </div>
       </div>
+      <NavigationAlert />
       <Content search={search} />
     </div>
   );
