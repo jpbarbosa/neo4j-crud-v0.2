@@ -16,8 +16,22 @@ docker run \
 cp .env.example .env
 ```
 
+### Run the app
+
 ```bash
 nx run-many --target=serve --all
+```
+
+### Run end-to-end tests
+
+```bash
+nx run-many --target=e2e --all
+```
+
+### Run graph unit tests
+
+```bash
+nx test graph
 ```
 
 ![Demo](demo.gif)
