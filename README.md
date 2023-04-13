@@ -1,5 +1,9 @@
 # Neo4j Fullstack CRUD
 
+A fullstack CRUD application with Neo4j, Express, React, and TypeScript, built on top of NX monorepo structure.
+
+### Run Neo4j
+
 ```bash
 docker run \
     --env=NEO4J_AUTH=none \
@@ -33,5 +37,7 @@ nx run-many --target=e2e --all
 ```bash
 nx test graph
 ```
+
+### Preview
 
 ![Demo](demo.gif)
