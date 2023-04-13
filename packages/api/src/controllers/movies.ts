@@ -1,6 +1,6 @@
-import * as graph from '@neo4j-crud/graph';
-import { AppResponse, Movie } from '@neo4j-crud/shared';
 import { NextFunction } from 'express';
+import { AppResponse, Movie } from '@neo4j-crud/shared';
+import * as graph from '@neo4j-crud/graph';
 
 export const moviesController = {
   getAll: async (req, res: AppResponse<Movie[]>, next: NextFunction) => {

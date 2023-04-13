@@ -1,6 +1,6 @@
-import * as graph from '@neo4j-crud/graph';
-import { AppResponse, Person } from '@neo4j-crud/shared';
 import { NextFunction } from 'express';
+import { AppResponse, Person } from '@neo4j-crud/shared';
+import * as graph from '@neo4j-crud/graph';
 
 export const peopleController = {
   getAll: async (req, res: AppResponse<Person[]>, next: NextFunction) => {

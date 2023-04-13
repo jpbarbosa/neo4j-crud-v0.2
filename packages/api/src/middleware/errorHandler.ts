@@ -1,6 +1,6 @@
-import { AppResponse } from '@neo4j-crud/shared';
 import { NextFunction, Request } from 'express';
 import { Neo4jError } from 'neo4j-driver';
+import { AppResponse } from '@neo4j-crud/shared';
 
 export const errorHandler = (
   err: Neo4jError,

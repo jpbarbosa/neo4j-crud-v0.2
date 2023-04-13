@@ -1,6 +1,6 @@
-import * as graph from '@neo4j-crud/graph';
-import { AppResponse, GraphVisData } from '@neo4j-crud/shared';
 import { NextFunction } from 'express';
+import { AppResponse, GraphVisData } from '@neo4j-crud/shared';
+import * as graph from '@neo4j-crud/graph';
 
 export const shortestPathController = {
   get: async (req, res: AppResponse<GraphVisData>, next: NextFunction) => {
