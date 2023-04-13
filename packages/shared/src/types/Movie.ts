@@ -4,7 +4,7 @@ import { Actor, Director, Producer, Reviewer, Writer } from './People';
 export type MoviePerson = Actor | Director | Producer | Reviewer | Writer;
 
 export type Movie = {
-  id: number;
+  id?: number;
   title: string;
   released: number;
   tagline: string;

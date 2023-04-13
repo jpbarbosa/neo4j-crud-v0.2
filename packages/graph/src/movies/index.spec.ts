@@ -1,6 +1,6 @@
 import { Driver, Session } from 'neo4j-driver';
 import { Movie, movies as sampleMovies } from '@neo4j-crud/shared';
-import * as graph from '.';
+import * as graph from './';
 import { neo4jDriver } from '../utils/neo4jDriver';
 import {
   neo4jConfigFile,

@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from 'react';
-import { Person } from '@neo4j-crud/shared';
 import { Controller, useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
+import { Person } from '@neo4j-crud/shared';
 import { usePersonMutation } from '../../../hooks/usePersonMutation';
 import { ErrorAlert, InputText } from '../../../components';
 

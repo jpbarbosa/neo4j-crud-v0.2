@@ -1,6 +1,6 @@
-import { AxiosCustomError, Person } from '@neo4j-crud/shared';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
+import { AxiosCustomError, Person } from '@neo4j-crud/shared';
 import * as api from '../../api';
 import { AlertCombo } from '../../components';
 import { Form } from './Form';

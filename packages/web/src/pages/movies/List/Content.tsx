@@ -1,9 +1,9 @@
 import { useQuery } from 'react-query';
 import { AxiosCustomError, Movie } from '@neo4j-crud/shared';
-import { useDebounce } from '../../../hooks/useDebounce';
-import { Item } from './Item';
-import { AlertCombo } from '../../../components';
 import * as api from '../../../api';
+import { useDebounce } from '../../../hooks/useDebounce';
+import { AlertCombo } from '../../../components';
+import { Item } from './Item';
 
 type ContentProps = {
   search: string;

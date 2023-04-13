@@ -13,12 +13,19 @@ type FormProps = {
 export const Form: React.FC<FormProps> = ({ movie }) => {
   const navigate = useNavigate();
 
-  const defaultValues = useMemo(
+  const defaultValues: Movie = useMemo(
     () =>
       movie || {
         title: '',
         tagline: '',
         released: 0,
+        people: {
+          actors: [],
+          directors: [],
+          producers: [],
+          writers: [],
+          reviewers: [],
+        },
       },
     [movie]
   );

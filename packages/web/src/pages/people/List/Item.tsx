@@ -1,8 +1,8 @@
-import { Person, PersonMovie, relationships } from '@neo4j-crud/shared';
-import { HighlightedText } from '../../../components';
 import { Link } from 'react-router-dom';
-import { PersonMovies } from './PersonMovies';
+import { Person, PersonMovie, relationships } from '@neo4j-crud/shared';
 import { fileNameFromString } from '../../../utils/fileNameFromString';
+import { HighlightedText } from '../../../components';
+import { PersonMovies } from './PersonMovies';
 
 type ItemProps = {
   person: Person;

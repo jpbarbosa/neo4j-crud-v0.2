@@ -1,6 +1,6 @@
-import { AxiosCustomError } from '@neo4j-crud/shared';
-import { GraphVisData } from 'react-graph-vis';
 import { useQuery } from 'react-query';
+import { GraphVisData } from 'react-graph-vis';
+import { AxiosCustomError } from '@neo4j-crud/shared';
 import * as api from '../../api';
 import { AlertCombo, GraphVis } from '../../components';
 import { useDebounce } from '../../hooks/useDebounce';

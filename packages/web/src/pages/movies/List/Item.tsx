@@ -1,11 +1,11 @@
+import { Link } from 'react-router-dom';
 import {
   Movie,
   RelationshipCollection,
   relationships,
 } from '@neo4j-crud/shared';
-import { Link } from 'react-router-dom';
-import { HighlightedText } from '../../../components';
 import { fileNameFromString } from '../../../utils/fileNameFromString';
+import { HighlightedText } from '../../../components';
 import { MoviePeople } from './MoviePeople';
 
 export type ItemProps = {

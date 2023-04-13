@@ -1,6 +1,6 @@
-import { Movie, Person, Relationship } from '@neo4j-crud/shared';
 import { useState } from 'react';
 import { UseFormRegister } from 'react-hook-form';
+import { Movie, Person, Relationship } from '@neo4j-crud/shared';
 
 type SelectPersonProps = {
   data: Person[];

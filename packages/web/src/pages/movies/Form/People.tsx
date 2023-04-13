@@ -1,6 +1,3 @@
-import { Movie, Relationship, stringToTitleCase } from '@neo4j-crud/shared';
-import { SelectPerson } from './SelectPerson';
-import { Person } from '@neo4j-crud/shared';
 import { useQuery } from 'react-query';
 import {
   Control,
@@ -8,9 +5,16 @@ import {
   useFieldArray,
   UseFormRegister,
 } from 'react-hook-form';
-import { FormPeopleRoles } from './PeopleRoles';
-import { LoadingAlert } from '../../../components';
+import {
+  Movie,
+  Person,
+  Relationship,
+  stringToTitleCase,
+} from '@neo4j-crud/shared';
 import * as api from '../../../api';
+import { LoadingAlert } from '../../../components';
+import { SelectPerson } from './SelectPerson';
+import { FormPeopleRoles } from './PeopleRoles';
 
 type FormPeopleProps = {
   control: Control<Movie>;
