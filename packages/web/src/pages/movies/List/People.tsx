@@ -5,13 +5,13 @@ import {
 } from '@neo4j-crud/shared';
 import { HighlightedText } from '../../../components';
 
-type MoviePeopleProps = {
+type PeopleProps = {
   relationship: Relationship;
   people: MoviePerson[];
   search: string;
 };
 
-export const MoviePeople: React.FC<MoviePeopleProps> = ({
+export const People: React.FC<PeopleProps> = ({
   relationship,
   search,
   people,

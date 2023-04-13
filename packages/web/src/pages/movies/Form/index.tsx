@@ -4,7 +4,7 @@ import { Controller, useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { useMovieMutation } from '../../../hooks/useMovieMutation';
 import { ErrorAlert, InputText } from '../../../components';
-import { FormPeople } from './People';
+import { People } from './People';
 
 type FormProps = {
   movie?: Movie;
@@ -95,7 +95,7 @@ export const Form: React.FC<FormProps> = ({ movie }) => {
           {relationships.map((relationship) => (
             <fieldset key={relationship.key} className="actors">
               <legend>{stringToTitleCase(relationship.key)}</legend>
-              <FormPeople
+              <People
                 control={control}
                 register={register}
                 relationship={relationship}

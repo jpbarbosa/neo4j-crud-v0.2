@@ -1,13 +1,13 @@
 import { Movie } from '@neo4j-crud/shared';
 import { FieldArrayWithId, UseFormRegister } from 'react-hook-form';
 
-type FormPeopleRolesProps = {
+type PersonRolesProps = {
   field: FieldArrayWithId<Movie, 'people.actors', 'id'>;
   register: UseFormRegister<Movie>;
   index: number;
 };
 
-export const FormPeopleRoles: React.FC<FormPeopleRolesProps> = ({
+export const PersonRoles: React.FC<PersonRolesProps> = ({
   field,
   register,
   index,

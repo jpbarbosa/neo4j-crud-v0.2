@@ -6,7 +6,7 @@ import {
 } from '@neo4j-crud/shared';
 import { fileNameFromString } from '../../../utils/fileNameFromString';
 import { HighlightedText } from '../../../components';
-import { MoviePeople } from './MoviePeople';
+import { People } from './People';
 
 export type ItemProps = {
   movie: Movie;
@@ -35,7 +35,7 @@ export const Item: React.FC<ItemProps> = ({ movie, search }) => {
             <div className="tagline">{movie.tagline}</div>
             <div className="relationships">
               {relationships.map((relationship) => (
-                <MoviePeople
+                <People
                   key={relationship.key}
                   relationship={relationship}
                   people={

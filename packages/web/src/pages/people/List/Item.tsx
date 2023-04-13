@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { Person, PersonMovie, relationships } from '@neo4j-crud/shared';
 import { fileNameFromString } from '../../../utils/fileNameFromString';
 import { HighlightedText } from '../../../components';
-import { PersonMovies } from './PersonMovies';
+import { Movies } from './Movies';
 
 type ItemProps = {
   person: Person;
@@ -31,7 +31,7 @@ export const Item: React.FC<ItemProps> = ({ person, search }) => {
             <div className="relationships">
               {person.movies !== undefined &&
                 relationships.map((relationship) => (
-                  <PersonMovies
+                  <Movies
                     key={relationship.key}
                     movies={person.movies as PersonMovie[]}
                     relationship={relationship}

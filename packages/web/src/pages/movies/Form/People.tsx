@@ -14,15 +14,15 @@ import {
 import * as api from '../../../api';
 import { LoadingAlert } from '../../../components';
 import { SelectPerson } from './SelectPerson';
-import { FormPeopleRoles } from './PeopleRoles';
+import { PersonRoles } from './PersonRoles';
 
-type FormPeopleProps = {
+type PeopleProps = {
   control: Control<Movie>;
   register: UseFormRegister<Movie>;
   relationship: Relationship;
 };
 
-export const FormPeople: React.FC<FormPeopleProps> = ({
+export const People: React.FC<PeopleProps> = ({
   control,
   register,
   relationship,
@@ -51,7 +51,7 @@ export const FormPeople: React.FC<FormPeopleProps> = ({
             />
           )}
           {relationship.collection === 'actors' && (
-            <FormPeopleRoles
+            <PersonRoles
               register={register}
               field={field as FieldArrayWithId<Movie, 'people.actors', 'id'>}
               index={index}
