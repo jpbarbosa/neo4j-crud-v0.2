@@ -15,8 +15,10 @@ export const Content: React.FC<ContentProps> = ({ person1, person2 }) => {
     () => api.shortestPath.get(person1, person2)
   );
 
-  if (error || isLoading || !data) {
-    return <AlertCombo error={error} isLoading={isLoading} data={data} />;
+  const noData = !data || data.nodes.length === 0;
+
+  if (error || isLoading || noData) {
+    return <AlertCombo error={error} isLoading={isLoading} noData={noData} />;
   }
 
   return (

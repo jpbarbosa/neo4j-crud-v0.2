@@ -1,5 +1,5 @@
-import { AxiosCustomError, Person } from '@neo4j-crud/shared';
 import { MutationKey, useMutation } from 'react-query';
+import { AxiosCustomError, Person } from '@neo4j-crud/shared';
 import * as api from '../api';
 
 export const usePersonMutation = (

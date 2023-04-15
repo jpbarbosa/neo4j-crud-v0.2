@@ -17,6 +17,9 @@ export const peopleController = {
     const id = parseInt(req.params.id);
     try {
       const person = await graph.people(req.neo4jSession).getById(id);
+      if (!person) {
+        res.status(404).send({ error: 'Not Found' });
+      }
       res.send(person);
     } catch (err) {
       next(err);

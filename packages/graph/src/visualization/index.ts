@@ -1,6 +1,7 @@
-import { GraphVisData, MovieNode, PersonNode } from '@neo4j-crud/shared';
 import { Relationship, Session } from 'neo4j-driver';
 import { Node, Edge } from 'vis-network/standalone';
+import { GraphVisData, MovieNode, PersonNode } from '@neo4j-crud/shared';
+import * as queries from './queries';
 
 type GetGraphReturn = GraphVisData;
 
@@ -11,20 +12,8 @@ type GetGraphResults = {
 };
 
 export const visualization = (session: Session) => ({
-  get: async (search: string): Promise<GetGraphReturn> => {
-    const result = await session.run<GetGraphResults>(
-      `
-      WITH toLower($search) AS search
-      MATCH (person:Person)-[r]->(movie:Movie)
-      WHERE
-        search IS NULL
-        OR search = ""
-        OR toLower(movie.title) CONTAINS search
-        OR toLower(person.name) CONTAINS search
-      RETURN *
-      `,
-      { search }
-    );
+  get: async (search = ''): Promise<GetGraphReturn> => {
+    const result = await session.run<GetGraphResults>(queries.get, { search });
 
     const nodes: Node[] = [];
     const edges: Edge[] = [];

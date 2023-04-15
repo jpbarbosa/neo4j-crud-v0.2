@@ -17,8 +17,10 @@ export const Content: React.FC<ContentProps> = ({ search }) => {
     () => api.visualization.get(search)
   );
 
-  if (error || isLoading || !data) {
-    return <AlertCombo error={error} isLoading={isLoading} data={data} />;
+  const noData = !data || data.nodes.length === 0;
+
+  if (error || isLoading || noData) {
+    return <AlertCombo error={error} isLoading={isLoading} noData={noData} />;
   }
 
   return (

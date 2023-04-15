@@ -17,8 +17,10 @@ export const Content: React.FC<ContentProps> = ({ search }) => {
     () => api.people.getAll(search)
   );
 
-  if (error || isLoading || !data) {
-    return <AlertCombo error={error} isLoading={isLoading} data={data} />;
+  const noData = !data || data.length === 0;
+
+  if (error || isLoading || noData) {
+    return <AlertCombo error={error} isLoading={isLoading} noData={noData} />;
   }
 
   return (

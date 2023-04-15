@@ -40,8 +40,16 @@ input[type='text'].number {
 }
 
 select,
-fieldset.actors input[type='text'] {
+fieldset.people input[type='text'] {
   width: 300px;
+}
+
+fieldset.people {
+  .person,
+  .roles {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .form-field-error {

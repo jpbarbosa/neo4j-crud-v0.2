@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from 'react';
-import { Movie, relationships, stringToTitleCase } from '@neo4j-crud/shared';
 import { Controller, useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
+import { Movie, relationships, stringToTitleCase } from '@neo4j-crud/shared';
 import { useMovieMutation } from '../../../hooks/useMovieMutation';
 import { ErrorAlert, InputText } from '../../../components';
 import { People } from './People';
@@ -43,7 +43,7 @@ export const Form: React.FC<FormProps> = ({ movie }) => {
     callback
   );
 
-  const { handleSubmit, control, register, reset } = useForm<Movie>({
+  const { handleSubmit, control, reset } = useForm<Movie>({
     defaultValues,
   });
 
@@ -93,13 +93,9 @@ export const Form: React.FC<FormProps> = ({ movie }) => {
             </div>
           </fieldset>
           {relationships.map((relationship) => (
-            <fieldset key={relationship.key} className="actors">
+            <fieldset key={relationship.key} className="people">
               <legend>{stringToTitleCase(relationship.key)}</legend>
-              <People
-                control={control}
-                register={register}
-                relationship={relationship}
-              />
+              <People control={control} relationship={relationship} />
             </fieldset>
           ))}
           <div className="bottom-actions-bar">

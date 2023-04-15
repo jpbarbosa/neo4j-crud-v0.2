@@ -86,7 +86,7 @@ describe('graph.movies', () => {
 
   it('should delete the movie', async () => {
     const [movie] = await graph.movies(session).getAll(sampleMovie.title);
-    const result = await graph.movies(session).remove(movie.id);
+    await graph.movies(session).remove(movie.id);
     const movies = await graph.movies(session).getAll(sampleMovie.title);
     expect(movies).toHaveLength(0);
   });

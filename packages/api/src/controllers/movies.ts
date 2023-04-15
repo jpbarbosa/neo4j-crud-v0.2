@@ -17,6 +17,9 @@ export const moviesController = {
     const id = parseInt(req.params.id);
     try {
       const movie = await graph.movies(req.neo4jSession).getById(id);
+      if (!movie) {
+        res.status(404).send({ error: 'Not Found' });
+      }
       res.send(movie);
     } catch (err) {
       next(err);

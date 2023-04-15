@@ -1,30 +1,30 @@
+import { Control, Controller, FieldArrayWithId } from 'react-hook-form';
 import { Movie } from '@neo4j-crud/shared';
-import { FieldArrayWithId, UseFormRegister } from 'react-hook-form';
+import { InputText } from '../../../components';
 
 type PersonRolesProps = {
   field: FieldArrayWithId<Movie, 'people.actors', 'id'>;
-  register: UseFormRegister<Movie>;
+  control: Control<Movie>;
   index: number;
 };
 
 export const PersonRoles: React.FC<PersonRolesProps> = ({
   field,
-  register,
+  control,
   index,
 }) => {
   return (
-    <span>
+    <div className="roles">
+      <div className="pr-8 pb-8">as</div>
       {(field.roles || ['']).map((role, roleIndex) => (
-        <span key={`${field.name}-${roleIndex}`}>
-          <span className="pr-8">as</span>
-          <input
-            type="text"
-            {...register(`people.actors.${index}.roles.${roleIndex}`, {
-              required: true,
-            })}
-          />
-        </span>
-      ))}{' '}
-    </span>
+        <Controller
+          key={`${field.name}-${roleIndex}`}
+          name={`people.actors.${index}.roles.${roleIndex}`}
+          control={control}
+          rules={{ required: true }}
+          render={(props) => <InputText {...props} />}
+        />
+      ))}
+    </div>
   );
 };

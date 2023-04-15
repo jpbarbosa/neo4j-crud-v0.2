@@ -1,5 +1,6 @@
 export * from './AlertCombo';
 export * from './ErrorAlert';
+export * from './FormFieldError';
 export * from './GraphVis';
 export * from './Header';
 export * from './HighlightedText';

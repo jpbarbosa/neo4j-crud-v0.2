@@ -1,5 +1,5 @@
-import { Movie } from '@neo4j-crud/shared';
 import axios from 'axios';
+import { Movie } from '@neo4j-crud/shared';
 
 const url = `${import.meta.env.VITE_API_URL}/movies`;
 

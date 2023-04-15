@@ -3,14 +3,14 @@ import { ErrorAlert, LoadingAlert } from './';
 
 type AlertComboProps = {
   error: AxiosCustomError | null;
-  isLoading?: boolean;
-  data?: any;
+  isLoading: boolean;
+  noData: any;
 };
 
 export const AlertCombo: React.FC<AlertComboProps> = ({
   error,
   isLoading,
-  data,
+  noData,
 }) => {
   if (error) {
     return <ErrorAlert error={error} />;
@@ -20,8 +20,8 @@ export const AlertCombo: React.FC<AlertComboProps> = ({
     return <LoadingAlert />;
   }
 
-  if (!data) {
-    return <div className="alert warn">Not Found</div>;
+  if (noData) {
+    return <div className="alert warn">No Data</div>;
   }
 
   return null;

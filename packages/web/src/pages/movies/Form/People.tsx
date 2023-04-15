@@ -1,10 +1,5 @@
 import { useQuery } from 'react-query';
-import {
-  Control,
-  FieldArrayWithId,
-  useFieldArray,
-  UseFormRegister,
-} from 'react-hook-form';
+import { Control, FieldArrayWithId, useFieldArray } from 'react-hook-form';
 import {
   Movie,
   Person,
@@ -18,15 +13,10 @@ import { PersonRoles } from './PersonRoles';
 
 type PeopleProps = {
   control: Control<Movie>;
-  register: UseFormRegister<Movie>;
   relationship: Relationship;
 };
 
-export const People: React.FC<PeopleProps> = ({
-  control,
-  register,
-  relationship,
-}) => {
+export const People: React.FC<PeopleProps> = ({ control, relationship }) => {
   const { fields, append, remove } = useFieldArray({
     control,
     name: `people.${relationship.collection}`,
@@ -41,18 +31,18 @@ export const People: React.FC<PeopleProps> = ({
   return (
     <>
       {fields.map((field, index) => (
-        <div key={field.name}>
+        <div key={field.id} className="person">
           {data && (
             <SelectPerson
               data={data}
               index={index}
-              register={register}
+              control={control}
               relationship={relationship}
             />
           )}
           {relationship.collection === 'actors' && (
             <PersonRoles
-              register={register}
+              control={control}
               field={field as FieldArrayWithId<Movie, 'people.actors', 'id'>}
               index={index}
             />

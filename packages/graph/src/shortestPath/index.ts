@@ -1,6 +1,7 @@
 import { PathSegment, Session } from 'neo4j-driver';
 import { Edge, Node } from 'vis-network/standalone';
 import { GraphVisData } from '@neo4j-crud/shared';
+import * as queries from './queries';
 
 type GetShortestPathReturn = GraphVisData;
 
@@ -15,19 +16,20 @@ export const shortestPath = (session: Session) => ({
     person1: string,
     person2: string
   ): Promise<GetShortestPathReturn> => {
-    const result = await session.run<GetShortestPathResults>(
-      `
-      WITH
-        $person1 AS person1,
-        $person2 AS person2
-      MATCH path = shortestPath((p1:Person {name: person1})-[*]-(p2:Person {name: person2}))
-      RETURN path
-      `,
-      { person1, person2 }
-    );
+    const result = await session.run<GetShortestPathResults>(queries.get, {
+      person1,
+      person2,
+    });
 
     const nodes: Node[] = [];
     const edges: Edge[] = [];
+
+    if (!result.records.length) {
+      return {
+        nodes,
+        edges,
+      };
+    }
 
     const { segments } = result.records[0].get('path');
 

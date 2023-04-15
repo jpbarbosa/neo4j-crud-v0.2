@@ -15,7 +15,7 @@ export const Edit = () => {
   );
 
   if (error || isLoading || !data) {
-    return <AlertCombo error={error} isLoading={isLoading} data={data} />;
+    return <AlertCombo error={error} isLoading={isLoading} noData={!data} />;
   }
 
   return <Form movie={data} />;
